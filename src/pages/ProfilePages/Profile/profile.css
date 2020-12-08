@@ -1,0 +1,25 @@
+.profile_info__container, .profile_info_grey__container {
+	display: flex;
+	align-items: top;
+	justify-content: space-between;
+	width: 300px;
+	margin: auto;
+	padding: 10px;
+}
+
+.profile_info_grey__container {
+	background: rgb(232, 232, 232);
+	margin: 20px auto;
+	width: 300px;
+}
+
+.grey_text {
+	color: var(--off);
+}
+
+.profile_orderhistory_title {
+	border-bottom: 1px solid var(--off);
+	padding: 10px;
+	width: 300px;
+	margin: auto;
+}

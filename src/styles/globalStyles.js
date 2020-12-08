@@ -25,6 +25,7 @@ body, input, button{
 	--off: #8E8F8E; 
 	--text: #ffffff;
 	--bg: #ffffff;
+	--light-grey: rgb(232, 232, 232);
 }
 
 img,svg,a,button{
@@ -32,8 +33,6 @@ img,svg,a,button{
 		cursor: pointer;
 	}
 }
-
-
 
 svg {
     width: 25px;
