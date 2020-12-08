@@ -1,14 +1,14 @@
 import React from "react";
 import { OrderCard } from "./style";
 
-const OrderHistoryCard = () => {
+const OrderHistoryCard = (props) => {
   return (
     <OrderCard>
-      <h3>Nome Restaurante</h3>
+      <h3>{props.restaurantName}</h3>
       <br />
-      <p>24 outubro 1900</p>
+      <p>{props.date}</p>
       <br />
-      <h1>SUBTOTAL R$ 121</h1>
+      <h1>SUBTOTAL R$ {props.total}</h1>
     </OrderCard>
   );
 };

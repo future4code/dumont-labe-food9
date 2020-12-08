@@ -13,6 +13,9 @@ export const OrderCard = styled.div`
   border: 1px solid var(--main);
   border-radius: 20px;
 
+  flex-wrap: wrap;
+  overflow: auto;
+
   h3 {
     color: var(--main);
   }

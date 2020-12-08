@@ -30,7 +30,37 @@ const Profile = () => {
       <div className="profile_orderhistory_title">
         <p>Histórico de Pedidos</p>
       </div>
-      <OrderHistoryCard />
+
+      <OrderHistoryCard
+        restaurantName="Nome do restaurante"
+        date="24 dezembro 2020"
+        total="4000"
+      />
+      <OrderHistoryCard
+        restaurantName="Nome do restaurante"
+        date="24 dezembro 2020"
+        total="4000"
+      />
+      <OrderHistoryCard
+        restaurantName="Nome do restaurante"
+        date="24 dezembro 2020"
+        total="4000"
+      />
+      <OrderHistoryCard
+        restaurantName="Nome do restaurante"
+        date="24 dezembro 2020"
+        total="4000"
+      />
+      <OrderHistoryCard
+        restaurantName="Nome do restaurante"
+        date="24 dezembro 2020"
+        total="4000"
+      />
+      <OrderHistoryCard
+        restaurantName="Nome do restaurante"
+        date="24 dezembro 2020"
+        total="4000"
+      />
     </Container>
   );
 };
