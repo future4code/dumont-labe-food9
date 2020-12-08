@@ -1,15 +1,15 @@
 import React from "react";
 import InputForm from "../../../components/MaterialUI/Forms";
-import { Container } from "../../../components/StyledComponents/styles";
+import { Container, Form } from "../../../components/StyledComponents/styles";
 import TopBar from "../../../components/TopBar/TopBar";
 import { Button } from "../../../components/MaterialUI/Buttons";
-import { Form } from "./style";
+
 const EditProfile = () => {
   return (
     <Container>
-      <TopBar Title="Editar Perfil" />
+      <TopBar Title="Editar" />
       <Form>
-        <InputForm label="Nome" type={"text"} />
+        <InputForm label="Nome" type={"name"} />
         <br />
         <InputForm label="Email" type={"email"} />
         <br />
