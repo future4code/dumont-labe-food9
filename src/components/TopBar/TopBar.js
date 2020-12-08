@@ -9,8 +9,8 @@ const TopBar = (props) => {
   var date = new Date();
   var hour = date.getHours();
   var minutes = date.getMinutes();
-	var AmPM = hour < 12 ? "AM" : "PM";
-	
+  var AmPM = hour < 12 ? "AM" : "PM";
+
   return (
     <Container>
       <PhoneDiv>
@@ -28,8 +28,8 @@ const TopBar = (props) => {
       </PhoneDiv>
 
       <TitleDiv>
-        <BsChevronLeft />
-        <h3>{props.Title}Title</h3>
+        <BsChevronLeft style={{ display: props.displayReturnIcon }} />
+        <h3>{props.Title}</h3>
       </TitleDiv>
     </Container>
   );

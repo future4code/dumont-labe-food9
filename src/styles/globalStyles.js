@@ -33,10 +33,7 @@ img,svg,a,button{
 	}
 }
 
-div{
 
-	padding: 20px
-}
 
 svg {
     width: 25px;
