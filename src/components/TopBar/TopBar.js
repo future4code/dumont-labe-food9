@@ -4,12 +4,16 @@ import { Container, Div, PhoneDiv, TitleDiv } from "./style";
 import { BsChevronLeft } from "react-icons/bs";
 import { BsBatteryFull } from "react-icons/bs";
 import { BsWifi } from "react-icons/bs";
+//router
+import { useHistory } from "react-router-dom";
 
 const TopBar = (props) => {
   var date = new Date();
   var hour = date.getHours();
   var minutes = date.getMinutes();
   var AmPM = hour < 12 ? "AM" : "PM";
+
+  const history = useHistory();
 
   return (
     <Container>
@@ -28,7 +32,10 @@ const TopBar = (props) => {
       </PhoneDiv>
 
       <TitleDiv>
-        <BsChevronLeft style={{ display: props.displayReturnIcon }} />
+        <BsChevronLeft
+          style={{ display: props.displayReturnIcon }}
+          onClick={() => history.goBack()}
+        />
         <h3>{props.Title}</h3>
       </TitleDiv>
     </Container>

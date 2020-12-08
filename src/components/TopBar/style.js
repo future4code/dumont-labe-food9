@@ -18,13 +18,7 @@ export const TitleDiv = styled.div`
   margin-bottom: 10px;
   border-bottom: 1px solid var(--off);
   svg {
-    position: relative;
-    right: 120px;
-  }
-
-  h3 {
-    position: relative;
-    right: 16px;
+    justify-self: flex-end;
   }
 `;
 
