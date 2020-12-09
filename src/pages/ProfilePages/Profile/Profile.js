@@ -12,6 +12,7 @@ import { useHistory } from "react-router-dom";
 import api from "../../../services/api";
 //context
 import { ProfileContext } from "../../../context/ProfileContext";
+import BottomBar from "../../../components/BottomBar/BottomBar";
 
 const Profile = () => {
   const history = useHistory();
@@ -20,12 +21,12 @@ const Profile = () => {
 
   function getOrdersHistory() {
     api
-      .get("/futureeats/orders/history", {
+      .get("/orders/history", {
         headers: {
           Authorization: localStorage.getItem("Token"),
         },
       })
-      .then((response) => setOrders(response.data))
+      .then((response) => setOrders(response.orders))
       .catch((error) => console.log(error));
   }
 
@@ -84,6 +85,8 @@ const Profile = () => {
         date="24 dezembro 2020"
         total="4000"
       />
+
+      <BottomBar />
     </Container>
   );
 };

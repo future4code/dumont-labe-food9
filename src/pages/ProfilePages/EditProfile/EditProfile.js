@@ -7,6 +7,8 @@ import { Button } from "../../../components/MaterialUI/Buttons";
 import { useForm } from "../../../hooks/useForm";
 //context
 import { ProfileContext } from "../../../context/ProfileContext";
+//api
+import api from '../../../services/api'
 
 const EditProfile = () => {
   const { setProfile } = useContext(ProfileContext);
@@ -27,14 +29,13 @@ const EditProfile = () => {
     };
 
     // api
-    //   .post(`/futureeats/profile`, body, {
+    //   .post(`/profile`, body, {
     //     headers: {
-    //       Authorization: localStorage.getItem("Token"),
+    //       auth: localStorage.getItem("Token"),
     //     },
     //   })
     //   .then((response) => {
     //    setProfile(response.user)
-    //     history.push("/timeline");
     //   })
     //   .catch((error) => {
     //     alert("Please verify our info and try again.");
