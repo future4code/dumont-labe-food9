@@ -99,6 +99,7 @@ export default function SpringModal(props) {
           <div className={classes.paper}>
             <h2 id="spring-modal-title">{props.modalTitle}</h2>
             <p id="spring-modal-description">{props.modalText}</p>
+            
           </div>
         </Fade>
       </Modal>

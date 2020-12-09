@@ -22,7 +22,7 @@ body, input, button{
 	margin: auto;
 	--main: #3FC060;
 	--secondary: #162328;
-	--off: #8E8F8E; 
+	--off: #B8B8B8; 
 	--text: #ffffff;
 	--bg: #ffffff;
 	--light-grey: rgb(232, 232, 232);
