@@ -21,10 +21,11 @@ body, input, button{
 #root{
 	margin: auto;
 	--main: #3FC060;
-	--seconday: #162328;
+	--secondary: #162328;
 	--off: #8E8F8E; 
 	--text: #ffffff;
 	--bg: #ffffff;
+	--light-grey: rgb(232, 232, 232);
 }
 
 img,svg,a,button{
@@ -32,4 +33,15 @@ img,svg,a,button{
 		cursor: pointer;
 	}
 }
+
+svg {
+    width: 25px;
+    height: 25px;
+		margin: 5px;
+  }
+
+	h3, p, a,h2, span, button{
+		font-size: 1rem;
+		color: var(--secondary);
+	}
 `;

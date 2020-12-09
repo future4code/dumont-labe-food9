@@ -1,11 +1,68 @@
-import React from 'react'
+import React from "react";
+import { Container } from "../../../components/StyledComponents/styles";
+import TopBar from "../../../components/TopBar/TopBar";
+import { BsPencilSquare } from "react-icons/bs";
+import "./profile.css";
+import OrderHistoryCard from "../../../components/OrderHistoryCard/OrderHistoryCard";
+import { useHistory } from "react-router-dom";
 
 const Profile = () => {
-	return (
-		<div>
-			
-		</div>
-	)
-}
+  const history = useHistory();
 
-export default Profile
+  return (
+    <Container>
+      <TopBar Title="Meu Perfil" displayReturnIcon="true" />
+      <div className="profile_info__container">
+        <div>
+          <p>Nome Sobrenome</p>
+          <p>Email</p>
+          <p>333.565.353-33</p>
+        </div>
+        <BsPencilSquare onClick={() => history.push("/editprofile")} />
+      </div>
+      <div className="profile_info_grey__container">
+        <div>
+          <p className="grey_text">Endereco</p>
+          <p>Rua bla bla</p>
+        </div>
+        <BsPencilSquare onClick={() => history.push("/editadress")} />
+      </div>
+      <div className="profile_orderhistory_title">
+        <p>Histórico de Pedidos</p>
+      </div>
+
+      <OrderHistoryCard
+        restaurantName="Nome do restaurante"
+        date="24 dezembro 2020"
+        total="4000"
+      />
+      <OrderHistoryCard
+        restaurantName="Nome do restaurante"
+        date="24 dezembro 2020"
+        total="4000"
+      />
+      <OrderHistoryCard
+        restaurantName="Nome do restaurante"
+        date="24 dezembro 2020"
+        total="4000"
+      />
+      <OrderHistoryCard
+        restaurantName="Nome do restaurante"
+        date="24 dezembro 2020"
+        total="4000"
+      />
+      <OrderHistoryCard
+        restaurantName="Nome do restaurante"
+        date="24 dezembro 2020"
+        total="4000"
+      />
+      <OrderHistoryCard
+        restaurantName="Nome do restaurante"
+        date="24 dezembro 2020"
+        total="4000"
+      />
+    </Container>
+  );
+};
+
+export default Profile;
