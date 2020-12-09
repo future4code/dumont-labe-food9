@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+//style
 import { Container } from "../../../components/StyledComponents/styles";
-import TopBar from "../../../components/TopBar/TopBar";
 import { BsPencilSquare } from "react-icons/bs";
 import "./profile.css";
+//components
+import TopBar from "../../../components/TopBar/TopBar";
 import OrderHistoryCard from "../../../components/OrderHistoryCard/OrderHistoryCard";
+//router
 import { useHistory } from "react-router-dom";
+//api
+import api from "../../../services/api";
+//context
+import { ProfileContext } from "../../../context/ProfileContext";
 
 const Profile = () => {
   const history = useHistory();
+  const { profile } = useContext(ProfileContext);
+  const [orders, setOrders] = useState([]);
+
+  function getOrdersHistory() {
+    api
+      .get("/futureeats/orders/history", {
+        headers: {
+          Authorization: localStorage.getItem("Token"),
+        },
+      })
+      .then((response) => setOrders(response.data))
+      .catch((error) => console.log(error));
+  }
 
   return (
     <Container>
@@ -31,11 +51,14 @@ const Profile = () => {
         <p>Histórico de Pedidos</p>
       </div>
 
-      <OrderHistoryCard
-        restaurantName="Nome do restaurante"
-        date="24 dezembro 2020"
-        total="4000"
-      />
+      {/* {orders?.map((order) => (
+        <OrderHistoryCard
+          restaurantName={order.name}
+          date={order.date}
+          total={order.total}
+        />
+      ))} */}
+
       <OrderHistoryCard
         restaurantName="Nome do restaurante"
         date="24 dezembro 2020"
