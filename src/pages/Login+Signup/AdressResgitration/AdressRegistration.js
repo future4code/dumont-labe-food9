@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
+import TopBar from "../../../components/TopBar/TopBar";
+import { Container } from "../../../components/StyledComponents/styles";
+
+
 
 const AdressRegistration = () => {
-	return (
-		<div>
-			
-		</div>
-	)
+  return <Container>
+      <TopBar  />
+
+	</Container>
+	
 }
 
 export default AdressRegistration
