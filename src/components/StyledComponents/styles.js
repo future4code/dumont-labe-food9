@@ -58,3 +58,24 @@ export const Logo = styled.img`
     height: 50px;
   }
 `;
+
+export const P = styled.p`
+text-align:center;
+`
+export const FormInputsLogin = styled.form`
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+  width: 335px;
+  justify-content: space-around;
+  margin-top: 20%;
+  margin-left: 3%;
+  margin-bottom: 5%;
+`
+export const AreaButton = styled.div`
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+margin-top:10px;
+ `

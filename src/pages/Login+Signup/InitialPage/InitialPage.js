@@ -1,15 +1,16 @@
 import React from 'react'
-import * as S from "../../../components/StyledComponents/styles";
-import logo from "../../../assets/logoBranco.png"
+import LogoImagem from "../../../assets/logoBranco.png"
+import { Logo , ContainerInitial } from "../../../components/StyledComponents/styles";
+
 
 const InitialPage = () => {
 	return (
-		<S.ContainerInitial>
-			<S.Logo
-				src={logo}
+		<ContainerInitial>
+			<Logo
+				src={LogoImagem}
 				alt="logo FutureEats Branco"
 				/>
-		</S.ContainerInitial>
+		</ContainerInitial>
 	)
 }
 
