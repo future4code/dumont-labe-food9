@@ -6,31 +6,31 @@ import {goToRestaurantPage} from '../../Routes/Coordinator'
 
 const RestaurantCard = () => {
 
-	const history = useHistory()
-	const [restaurants, setRestaurants] = useState([])
+// 	const history = useHistory()
+// 	const [restaurants, setRestaurants] = useState([])
 	
 
-	const getRestaurants = () => {
-        axios.get('https://us-central1-missao-newton.cloudfunctions.net/futureEatsA/restaurants', {
-            headers: {
-                auth: localStorage.getItem("token"),
-            }
-        }).then((response) => {
-            console.log(response.data.restaurants)
-            setRestaurants(response.data.restaurants)
-        }).catch((error) => {
-            console.log(error)
-        })
-    }
+// 	const getRestaurants = () => {
+//         axios.get('https://us-central1-missao-newton.cloudfunctions.net/futureEatsA/restaurants', {
+//             headers: {
+//                 auth: localStorage.getItem("token"),
+//             }
+//         }).then((response) => {
+//             console.log(response.data.restaurants)
+//             setRestaurants(response.data.restaurants)
+//         }).catch((error) => {
+//             console.log(error)
+//         })
+//     }
 
-	useEffect(() => {
-		getRestaurants()
+// 	useEffect(() => {
+// 		getRestaurants()
 		
-},[])
+// },[])
 	
 	return (
 		<RestaurantContainer>
-          {
+          {/* {
                    restaurants.map((restaurant) => (
                   <RestaurantCardInfo key={restaurant.id} onClick={() => goToRestaurantPage(history, restaurant.id)}>
                     <RestaurantImage src={restaurant.logoUrl} alt="restaurant" />
@@ -40,7 +40,7 @@ const RestaurantCard = () => {
                       <p>Frete R${restaurant.shipping},00</p>
                     </div>
                   </RestaurantCardInfo>))
-          }
+          } */}<h1>Card Restaurante</h1>
         </RestaurantContainer>
 	)
 }
