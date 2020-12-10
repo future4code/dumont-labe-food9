@@ -33,3 +33,28 @@ export const Form = styled.form`
     color: var(--text);
   }
 `;
+
+// styled Initial Page
+export const ContainerInitial = styled.div`
+  background-color: #000000;
+  height: 640px;
+  width: 360px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+`;
+
+export const Logo = styled.img`
+  display: flex;
+  text-align: center;
+  width: 126px;
+  height: 65px;
+  padding: 288px 117px 287px;
+  cursor: pointer;
+  &:hover {
+    width: 100px;
+    height: 50px;
+  }
+`;
