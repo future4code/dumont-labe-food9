@@ -47,14 +47,31 @@ export const ContainerInitial = styled.div`
 `;
 
 export const Logo = styled.img`
-  display: flex;
-  text-align: center;
   width: 126px;
   height: 65px;
-  padding: 288px 117px 287px;
   cursor: pointer;
   &:hover {
     width: 100px;
     height: 50px;
   }
+`;
+
+export const LogoDiv = styled.div`
+  border: 1px solid white;
+  width: 330px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Input = styled.input`
+  width: 300px;
+  height: 40px;
+  padding: 10px;
+  margin-bottom: 10px;
+
+  color: var(--secondary);
+
+  border: 1px solid var(--off);
 `;
