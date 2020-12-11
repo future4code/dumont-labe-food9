@@ -20,6 +20,10 @@ export const Container = styled.div`
   margin: auto;
   flex-wrap: wrap;
   overflow: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const Form = styled.form`
@@ -57,7 +61,7 @@ export const Logo = styled.img`
 `;
 
 export const LogoDiv = styled.div`
-  border: 1px solid white;
+  margin: 100px auto;
   width: 330px;
   height: 200px;
   display: flex;
