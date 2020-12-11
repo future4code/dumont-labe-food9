@@ -1,11 +1,14 @@
 import React from "react";
+//components
 import TopBarLogin from "../../../components/TopBar/TopBarLogin";
+//styles
 import * as S from "../../../components/StyledComponents/styles";
 import logo from "../../../assets/logoPreto.png";
-
 import { Button } from "../../../components/MaterialUI/Buttons";
 import { Link, useHistory } from "react-router-dom";
+//hooks
 import { useForm } from "../../../hooks/useForm";
+//services
 import api from "../../../services/api";
 
 const Login = () => {

@@ -1,12 +1,15 @@
 import React, { useState } from "react";
+//components
 import TopBar from "../../../components/TopBar/TopBar";
+//styles
 import { Container } from "../../../components/StyledComponents/styles";
 import * as S from "../../../components/StyledComponents/styles";
 import logo from "../../../assets/logoPreto.png";
-
 import { Button } from "../../../components/MaterialUI/Buttons";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+//hooks
 import { useForm } from "../../../hooks/useForm";
+//services
 import api from "../../../services/api";
 
 const Register = () => {
@@ -19,6 +22,8 @@ const Register = () => {
     cpf: "",
   });
 
+  const history = useHistory();
+
   function handleInputChange(event) {
     const { value, name } = event.target;
 
@@ -26,8 +31,7 @@ const Register = () => {
   }
 
   function handleValidatePassword(event) {
-    setConfirmPassword(event.target.value)
-
+    setConfirmPassword(event.target.value);
   }
 
   function handleRegister(event) {
@@ -46,7 +50,7 @@ const Register = () => {
       .then((response) => {
         localStorage.setItem("Token", response.data.token);
         console.log(response.data.token);
-        alert("sucesso vc e bom!");
+        history.push("/home");
       })
       .catch((error) => console.log(error));
   }
@@ -81,6 +85,7 @@ const Register = () => {
           value={form.cpf}
           type={"number"}
           onChange={handleInputChange}
+          pattern={"[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}"}
           required
         />
         <S.Input
