@@ -6,6 +6,7 @@ import { Container } from "../../../components/StyledComponents/styles";
 import * as S from "../../../components/StyledComponents/styles";
 import logo from "../../../assets/logoPreto.png";
 import { Button } from "../../../components/MaterialUI/Buttons";
+//router
 import { Link, useHistory } from "react-router-dom";
 //hooks
 import { useForm } from "../../../hooks/useForm";
@@ -30,8 +31,16 @@ const Register = () => {
     onChangeInput(value, name);
   }
 
-  function handleValidatePassword(event) {
-    setConfirmPassword(event.target.value);
+  function onChangeValidatePassword(e) {
+    setConfirmPassword(e.target.value);
+    confirmPassword.length > 6 && handleValidatePassword();
+  }
+
+  function handleValidatePassword() {
+    console.log('chegou aqui')
+    let senha1 = confirmPassword;
+    let senha2 = form.password;
+    senha1 !== senha2 && alert("Senhas não conferem!");
   }
 
   function handleRegister(event) {
@@ -52,12 +61,15 @@ const Register = () => {
         console.log(response.data.token);
         history.push("/home");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        alert(error.message)
+       return console.log(error)
+      })
   }
 
   return (
     <Container>
-      <TopBar />
+      <TopBar displayReturnIcon={"none"}/>
       <S.LogoDiv>
         <S.Logo src={logo} alt="logo FutureEats Preto" />
       </S.LogoDiv>
@@ -65,7 +77,7 @@ const Register = () => {
       <S.Form onSubmit={handleRegister}>
         <S.Input
           value={form.name}
-          placeholder={"nome"}
+          placeholder={"Nome"}
           name={"name"}
           type={"name"}
           onChange={handleInputChange}
@@ -101,14 +113,14 @@ const Register = () => {
           name={"password"}
           value={confirmPassword}
           type={"password"}
-          onChange={handleValidatePassword}
+          onChange={onChangeValidatePassword}
           required
         />
                               
         <Button>SignUp</Button>
               
         <Link to="/register">
-          <p>Não possui cadastro? Clique aqui.</p>
+          <p style={{ fontSize: "0.7rem" }}>Não possui cadastro? Clique aqui.</p>
         </Link>
                      
       </S.Form>

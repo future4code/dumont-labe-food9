@@ -1,6 +1,6 @@
 import React from "react";
 //components
-import TopBarLogin from "../../../components/TopBar/TopBarLogin";
+import TopBar from "../../../components/TopBar/TopBar";
 //styles
 import * as S from "../../../components/StyledComponents/styles";
 import logo from "../../../assets/logoPreto.png";
@@ -46,7 +46,7 @@ const Login = () => {
 
   return (
     <S.Container>
-      <TopBarLogin />
+      <TopBar displayReturnIcon={"none"}/>
       <S.LogoDiv>
         <S.Logo src={logo} alt="logo FutureEats Preto" />
       </S.LogoDiv>
