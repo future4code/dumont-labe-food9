@@ -1,48 +1,24 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom'
-import { RestaurantContainer, RestaurantImage, RestaurantCardInfo } from './style'
-import {goToRestaurantPage} from '../../Routes/Coordinator'
+import React from "react";
+import { RestaurantCardContainer, RestaurantInfo } from "./style";
 
 const RestaurantCard = () => {
+  return (
+    <RestaurantCardContainer>
+      <img
+        src="https://source.unsplash.com/300x200/?food,restaurant"
+        alt="Restaurant"
+      />
 
-// 	const history = useHistory()
-// 	const [restaurants, setRestaurants] = useState([])
-	
+      <RestaurantInfo>
+        <div>
+          <h3>Restaurant Name</h3>
+          <p> 50-60 min </p>
+        </div>
 
-// 	const getRestaurants = () => {
-//         axios.get('https://us-central1-missao-newton.cloudfunctions.net/futureEatsA/restaurants', {
-//             headers: {
-//                 auth: localStorage.getItem("token"),
-//             }
-//         }).then((response) => {
-//             console.log(response.data.restaurants)
-//             setRestaurants(response.data.restaurants)
-//         }).catch((error) => {
-//             console.log(error)
-//         })
-//     }
+        <p>Frete R$ 6,00</p>
+      </RestaurantInfo>
+    </RestaurantCardContainer>
+  );
+};
 
-// 	useEffect(() => {
-// 		getRestaurants()
-		
-// },[])
-	
-	return (
-		<RestaurantContainer>
-          {/* {
-                   restaurants.map((restaurant) => (
-                  <RestaurantCardInfo key={restaurant.id} onClick={() => goToRestaurantPage(history, restaurant.id)}>
-                    <RestaurantImage src={restaurant.logoUrl} alt="restaurant" />
-                    <h1>{restaurant.name}</h1>
-                    <div>
-                      <p>{restaurant.deliveryTime} min</p>
-                      <p>Frete R${restaurant.shipping},00</p>
-                    </div>
-                  </RestaurantCardInfo>))
-          } */}<h1>Card Restaurante</h1>
-        </RestaurantContainer>
-	)
-}
-
-export default RestaurantCard
+export default RestaurantCard;

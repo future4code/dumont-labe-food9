@@ -27,7 +27,6 @@ const Register = () => {
 
   function handleInputChange(event) {
     const { value, name } = event.target;
-
     onChangeInput(value, name);
   }
 
@@ -38,9 +37,7 @@ const Register = () => {
 
   function handleValidatePassword() {
     console.log('chegou aqui')
-    let senha1 = confirmPassword;
-    let senha2 = form.password;
-    senha1 !== senha2 && alert("Senhas não conferem!");
+ 
   }
 
   function handleRegister(event) {
@@ -115,10 +112,8 @@ const Register = () => {
           type={"password"}
           onChange={onChangeValidatePassword}
           required
-        />
-                              
-        <Button>SignUp</Button>
-              
+        />              
+        <Button>SignUp</Button>   
         <Link to="/register">
           <p style={{ fontSize: "0.7rem" }}>Não possui cadastro? Clique aqui.</p>
         </Link>
