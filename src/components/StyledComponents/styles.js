@@ -61,9 +61,9 @@ export const Logo = styled.img`
 `;
 
 export const LogoDiv = styled.div`
-  margin: 100px auto;
+  margin: 100px auto 0 auto;
   width: 330px;
-  height: 200px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,4 +78,8 @@ export const Input = styled.input`
   color: var(--secondary);
 
   border: 1px solid var(--off);
+  border-radius: 10px;
+
+  color: var(--secondary);
+  font-size: 0.8rem;
 `;

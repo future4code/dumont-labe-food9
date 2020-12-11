@@ -52,17 +52,15 @@ const Login = () => {
               
         <S.Input
           value={form.email}
-          label={"E-mail"}
+          placeholder="Email"
           name={"email"}
           type={"email"}
           onChange={handleInputChange}
           required
         />
-              
-        <br />
-              
+           
         <S.Input
-          label={"Senha"}
+          placeholder="Senha"
           name={"password"}
           value={form.password}
           type={"password"}
@@ -73,7 +71,9 @@ const Login = () => {
         <Button>Login</Button>
               
         <Link to="/register">
-          <p>Não possui cadastro? Clique aqui.</p>
+          <p style={{ fontSize: "0.7rem" }}>
+            Não possui cadastro? Clique aqui.
+          </p>
         </Link>
                      
       </S.Form>
