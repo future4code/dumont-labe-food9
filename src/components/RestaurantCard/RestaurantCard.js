@@ -1,7 +1,7 @@
 import React from "react";
 import { RestaurantCardContainer, RestaurantInfo } from "./style";
 
-const RestaurantCard = () => {
+const RestaurantCard = (props) => {
   return (
     <RestaurantCardContainer>
       <img
@@ -11,11 +11,11 @@ const RestaurantCard = () => {
 
       <RestaurantInfo>
         <div>
-          <h3>Restaurant Name</h3>
-          <p> 50-60 min </p>
+          <h3>{props.name}</h3>
+          <p> {props.deliveryTime} min </p>
         </div>
 
-        <p>Frete R$ 6,00</p>
+        <p>Frete R$ {props.shipping} </p>
       </RestaurantInfo>
     </RestaurantCardContainer>
   );

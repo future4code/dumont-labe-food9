@@ -56,7 +56,7 @@ const Register = () => {
       .then((response) => {
         localStorage.setItem("Token", response.data.token);
         console.log(response.data.token);
-        history.push("/home");
+        history.push("/adress");
       })
       .catch((error) => {
         alert(error.message)

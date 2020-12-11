@@ -1,8 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect } from "react";
 //component
 import RestaurantCard from "../../components/RestaurantCard/RestaurantCard";
 import TopBar from "../../components/TopBar/TopBar";
 import BottomBar from "../../components/BottomBar/BottomBar";
+import Loading from "../../components/MaterialUI/Loading";
 //style
 import { Container } from "../../components/StyledComponents/styles";
 import RestaurantsBar from "../../components/RestaurantsBar/RestaurantsBar";
@@ -13,10 +15,13 @@ import "./style.css";
 import api from "../../services/api";
 //context
 import { RestaurantsContext } from "../../context/RestaurantsContext";
+import { useHistory } from "react-router-dom";
 
 const Home = () => {
   const { restaurants, setRestaurants } = useContext(RestaurantsContext);
-  console.log(localStorage.getItem("Token"), "console.log");
+
+  const history = useHistory();
+
   useEffect(() => {
     api
       .get("/restaurants", {
@@ -26,10 +31,14 @@ const Home = () => {
       })
       .then((response) => {
         setRestaurants(response.data.restaurants);
-        console.log(restaurants);
       })
       .catch((error) => console.log(error));
-  }, [restaurants, setRestaurants]);
+  }, []);
+
+  function handleSeeDetails(id) {
+    history.push(`/restaurant/${id}`);
+  }
+
   return (
     <Container>
       <TopBar Title="FutureEats" />
@@ -37,13 +46,21 @@ const Home = () => {
         <input placeholder="Procurar..." />
         <BsSearch />
       </SearchBar>
+      <RestaurantsBar />
       <div className="restaurantContainer">
-        <RestaurantsBar />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
+        {restaurants ? (
+          restaurants.map((restaurant) => (
+            <RestaurantCard
+              key={restaurant.id}
+              name={restaurant.name}
+              deliveryTime={restaurant.deliveryTime}
+              shipping={restaurant.shipping}
+              onClick={() => handleSeeDetails(restaurant.id)}
+            />
+          ))
+        ) : (
+          <Loading />
+        )}
       </div>
       <BottomBar />
     </Container>
