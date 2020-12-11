@@ -14,12 +14,16 @@ export const H3 = styled.h3`
 
 export const Container = styled.div`
   width: 350px;
-  height: 100vh;
-  border: 1px solid var(--off);
+  height: 100%;
+
   padding: 10px 10px 40px 10px;
   margin: auto;
   flex-wrap: wrap;
   overflow: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const Form = styled.form`
@@ -57,9 +61,9 @@ export const Logo = styled.img`
 `;
 
 export const LogoDiv = styled.div`
-  border: 1px solid white;
+  margin: 100px auto 0 auto;
   width: 330px;
-  height: 200px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,4 +78,8 @@ export const Input = styled.input`
   color: var(--secondary);
 
   border: 1px solid var(--off);
+  border-radius: 10px;
+
+  color: var(--secondary);
+  font-size: 0.8rem;
 `;

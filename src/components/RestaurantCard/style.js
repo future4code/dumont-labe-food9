@@ -1,27 +1,44 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const RestaurantContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    margin: 120px 16px 0px 16px;
-`
+export const RestaurantCardContainer = styled.div`
+  width: 330px;
+  height: 250px;
 
-export const RestaurantCardInfo = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 328px;
-    height: 188px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-    border: solid 1px #b8b8b8;
-`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-export const RestaurantImage = styled.img`
+  margin: 10px;
+
+  border: 1px solid var(--off);
+  border-radius: 20px;
+  padding: 5px 10px;
+
+  img {
     width: 100%;
-    height: 120px;
-    object-fit: fill;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-`
+    height: 150px;
+    border-radius: 10px;
+  }
+`;
+
+export const RestaurantInfo = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  div {
+    margin-top: 10px;
+    width: 100%;
+    height: 150px;
+  }
+  p {
+    font-size: 0.8rem;
+    width: 150px;
+    margin-bottom: 20px;
+    color: var(--off);
+  }
+
+  h3 {
+    font-size: 1rem;
+    color: var(--main);
+  }
+`;

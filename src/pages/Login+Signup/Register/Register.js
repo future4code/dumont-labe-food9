@@ -1,12 +1,16 @@
 import React, { useState } from "react";
+//components
 import TopBar from "../../../components/TopBar/TopBar";
+//styles
 import { Container } from "../../../components/StyledComponents/styles";
 import * as S from "../../../components/StyledComponents/styles";
 import logo from "../../../assets/logoPreto.png";
-
 import { Button } from "../../../components/MaterialUI/Buttons";
-import { Link } from "react-router-dom";
+//router
+import { Link, useHistory } from "react-router-dom";
+//hooks
 import { useForm } from "../../../hooks/useForm";
+//services
 import api from "../../../services/api";
 
 const Register = () => {
@@ -19,15 +23,21 @@ const Register = () => {
     cpf: "",
   });
 
+  const history = useHistory();
+
   function handleInputChange(event) {
     const { value, name } = event.target;
-
     onChangeInput(value, name);
   }
 
-  function handleValidatePassword(event) {
-    setConfirmPassword(event.target.value)
+  function onChangeValidatePassword(e) {
+    setConfirmPassword(e.target.value);
+    confirmPassword.length > 6 && handleValidatePassword();
+  }
 
+  function handleValidatePassword() {
+    console.log('chegou aqui')
+ 
   }
 
   function handleRegister(event) {
@@ -46,14 +56,17 @@ const Register = () => {
       .then((response) => {
         localStorage.setItem("Token", response.data.token);
         console.log(response.data.token);
-        alert("sucesso vc e bom!");
+        history.push("/adress");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        alert(error.message)
+       return console.log(error)
+      })
   }
 
   return (
     <Container>
-      <TopBar />
+      <TopBar displayReturnIcon={"none"}/>
       <S.LogoDiv>
         <S.Logo src={logo} alt="logo FutureEats Preto" />
       </S.LogoDiv>
@@ -61,7 +74,7 @@ const Register = () => {
       <S.Form onSubmit={handleRegister}>
         <S.Input
           value={form.name}
-          placeholder={"nome"}
+          placeholder={"Nome"}
           name={"name"}
           type={"name"}
           onChange={handleInputChange}
@@ -81,6 +94,7 @@ const Register = () => {
           value={form.cpf}
           type={"number"}
           onChange={handleInputChange}
+          pattern={"[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}"}
           required
         />
         <S.Input
@@ -96,14 +110,12 @@ const Register = () => {
           name={"password"}
           value={confirmPassword}
           type={"password"}
-          onChange={handleValidatePassword}
+          onChange={onChangeValidatePassword}
           required
-        />
-                              
-        <Button>SignUp</Button>
-              
+        />              
+        <Button>SignUp</Button>   
         <Link to="/register">
-          <p>Não possui cadastro? Clique aqui.</p>
+          <p style={{ fontSize: "0.7rem" }}>Não possui cadastro? Clique aqui.</p>
         </Link>
                      
       </S.Form>

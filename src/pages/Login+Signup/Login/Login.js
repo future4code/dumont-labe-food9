@@ -1,11 +1,14 @@
 import React from "react";
-import TopBarLogin from "../../../components/TopBar/TopBarLogin";
+//components
+import TopBar from "../../../components/TopBar/TopBar";
+//styles
 import * as S from "../../../components/StyledComponents/styles";
 import logo from "../../../assets/logoPreto.png";
-
 import { Button } from "../../../components/MaterialUI/Buttons";
 import { Link, useHistory } from "react-router-dom";
+//hooks
 import { useForm } from "../../../hooks/useForm";
+//services
 import api from "../../../services/api";
 
 const Login = () => {
@@ -43,7 +46,7 @@ const Login = () => {
 
   return (
     <S.Container>
-      <TopBarLogin />
+      <TopBar displayReturnIcon={"none"}/>
       <S.LogoDiv>
         <S.Logo src={logo} alt="logo FutureEats Preto" />
       </S.LogoDiv>
@@ -52,17 +55,15 @@ const Login = () => {
               
         <S.Input
           value={form.email}
-          label={"E-mail"}
+          placeholder="Email"
           name={"email"}
           type={"email"}
           onChange={handleInputChange}
           required
         />
-              
-        <br />
-              
+           
         <S.Input
-          label={"Senha"}
+          placeholder="Senha"
           name={"password"}
           value={form.password}
           type={"password"}
@@ -73,7 +74,9 @@ const Login = () => {
         <Button>Login</Button>
               
         <Link to="/register">
-          <p>Não possui cadastro? Clique aqui.</p>
+          <p style={{ fontSize: "0.7rem" }}>
+            Não possui cadastro? Clique aqui.
+          </p>
         </Link>
                      
       </S.Form>
