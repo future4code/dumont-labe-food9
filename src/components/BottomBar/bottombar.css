@@ -1,0 +1,12 @@
+.bottombar_container {
+	width: 320px;
+	height: 40px;
+	position: fixed;
+	bottom: 0;
+	margin: 1px auto;
+	padding: 10px 20px 10px 10px;
+	background: var(--bg);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}

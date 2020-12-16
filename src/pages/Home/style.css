@@ -1,0 +1,8 @@
+.restaurantContainer {
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+	align-items: center;
+	width: 330px;
+	margin: auto;
+}
